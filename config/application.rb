@@ -23,5 +23,11 @@ module TheMaster
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Configure generators to use UUIDs as the default primary key
+    config.generators.orm :active_record, primary_key_type: :uuid
+
+    # Setup GoodJob as the queue adapter
+    config.active_job.queue_adapter = :good_job
   end
 end
